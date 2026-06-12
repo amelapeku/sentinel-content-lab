@@ -20,38 +20,33 @@ resource workbook 'Microsoft.Insights/workbooks@2022-04-01' = {
     version: '1.0'
     serializedData: '''
 {
-    "version": "Notebook/1.0",
-    "items": [
-        {
-            "type": 1,
-            "content": {
-                "json": "# TTT Lab placeholder workbook\n\nIf you can see this in Sentinel → Workbooks, the pipeline works.\n\nReplace `serializedData` in `workbooks/placeholder.bicep` with the JSON of your real workbook to update it."
-            },
-            "name": "intro",
-            "id": "bd843576-0725-484e-9167-75e97901a5e0"
-        },
-        {
-            "type": 3,
-            "content": {
-                "version": "KqlItem/1.0",
-                "query": "Heartbeat\n| summarize LastSeen = max(TimeGenerated) by Computer\n| top 25 by LastSeen desc",
-                "size": 0,
-                "title": "Recent agent heartbeats",
-                "queryType": 0,
-                "resourceType": "microsoft.operationalinsights/workspaces",
-                "crossComponentResources": [
-                    "/subscriptions/fe70d943-14c9-4c71-9451-7429c8c7b390/resourcegroups/general-fr/providers/microsoft.operationalinsights/workspaces/law-france"
-                ]
-            },
-            "name": "heartbeats",
-            "id": "acbefd91-d9b4-4f6b-9325-e2cad071eeb4"
-        }
-    ],
-    "fallbackResourceIds": [
-        "/subscriptions/fe70d943-14c9-4c71-9451-7429c8c7b390/resourcegroups/general-fr/providers/microsoft.operationalinsights/workspaces/law-france"
-    ],
-    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json",
-    "context": {
-        "ownerId": "/subscriptions/fe70d943-14c9-4c71-9451-7429c8c7b390/resourcegroups/general-fr/providers/microsoft.operationalinsights/workspaces/law-france"
+  "version": "Notebook/1.0",
+  "items": [
+    {
+      "type": 1,
+      "content": {
+            "json": "# TTT Lab placeholder workbook\n\nIf you can see this in Sentinel → Workbooks, the pipeline works.\n\nReplace `serializedData` in `workbooks/placeholder.bicep` with the JSON of your real workbook to update it."
+      },
+      "name": "intro"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+            "query": "Heartbeat\n| summarize LastSeen = max(TimeGenerated) by Computer\n| top 25 by LastSeen desc",
+        "size": 0,
+        "title": "Recent agent heartbeats",
+        "queryType": 0,
+        "resourceType": "microsoft.operationalinsights/workspaces"
+      },
+      "name": "heartbeats"
     }
+  ],
+  "fallbackResourceIds": [],
+  "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}
+'''
+  }
+  // Note: the parent workspace is referenced through `sourceId`, not the resource hierarchy.
+  // Workbooks live at the resource group scope, not under the workspace.
 }
