@@ -1,0 +1,9 @@
+FileName, CommitSha
+parsers/Im_AuthenticationCustom.bicep,faf62fcddc5a9a98bd349c25ab8bdcee758da347
+analytics-rules/mass-file-download.bicep,05c805405e261dda5a0c2e2e92aed26e556a02ae
+analytics-rules/nsg-rule-deletion.bicep,d464efb4677b0d51f2f7f8e07535eb8f426bdab5
+parsers/ASimAuthenticationContosoAuth.bicep,50e6093fcf2f1e93d32f01c230cbeee91f31c80a
+analytics-rules/failed-then-successful-logon.bicep,26e4b7b19a6cb0bcd34a6be66910429f9ea308a2
+parsers/vimAuthenticationContosoAuth.bicep,23fafed3cbe7395507486e0b276e06157c4202eb
+sentinel-deployment.config,e04675318fcee77b0c68bfecb9184ccbc9e6eee9
+
